@@ -7,6 +7,9 @@ const mongoose = require('mongoose');
 //importing API controllers and EP's
 const categoryRoutes = require('./controller/ConferenceCategoryController');
 const conferenceRoutes = require('./controller/ConferenceController');
+const speakerRoutes = require('./controller/SpeakerController');
+
+
 const app = new Koa();
 
 //Database config
@@ -24,6 +27,8 @@ app.use(bodyParser());
 
 app.use(categoryRoutes.routes()).use(categoryRoutes.allowedMethods());
 app.use(conferenceRoutes.routes()).use(conferenceRoutes.allowedMethods());
+app.use(speakerRoutes.routes()).use(speakerRoutes.allowedMethods());
+
 
 // cross origin policy setup
 app.use(function (req, res, next) {
