@@ -8,6 +8,7 @@ const mongoose = require('mongoose');
 const categoryRoutes = require('./controller/ConferenceCategoryController');
 const conferenceRoutes = require('./controller/ConferenceController');
 const speakerRoutes = require('./controller/SpeakerController');
+const userRoutes = require('./controller/UserController');
 
 
 const app = new Koa();
@@ -28,6 +29,7 @@ app.use(bodyParser());
 app.use(categoryRoutes.routes()).use(categoryRoutes.allowedMethods());
 app.use(conferenceRoutes.routes()).use(conferenceRoutes.allowedMethods());
 app.use(speakerRoutes.routes()).use(speakerRoutes.allowedMethods());
+app.use(userRoutes.routes()).use(userRoutes.allowedMethods());
 
 
 // cross origin policy setup
