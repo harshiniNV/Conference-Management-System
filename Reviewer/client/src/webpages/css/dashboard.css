@@ -1,0 +1,28 @@
+.btn-group button {
+    background-color: #a8d6e7; /* Green background */
+    padding: 10px 24px; /* Some padding */
+    cursor: pointer; /* Pointer/hand icon */
+  }
+  .link{
+    color: darkblue;
+
+  }
+  .center {
+    margin: 0;
+    position: absolute;
+    text-align: center;
+    background-color:#f0f1f3;
+    height: 100%;
+    width: 100%;
+  }
+  .body{
+    color: #125b75;
+      height: 100%;
+      width: 100%;
+    }
+  .header{
+      color: #125b75;
+      height: 100%;
+      width: 100%;
+  }
+ 
