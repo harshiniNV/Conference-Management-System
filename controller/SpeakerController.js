@@ -25,6 +25,7 @@ router.post('/', async (request) => {
     const speaker = new Speaker({
         code: request.request.body.code,
         name: request.request.body.name,
+        type: request.request.body.type,
         qualification: request.request.body.qualification,
         description: request.request.body.description
     });
@@ -54,22 +55,23 @@ router.get('/:id', async (request) => {
 
 });
 
-router.put('/:id', async (request) => {
+router.put('/:id', async (ctx) => {
 
     try {
 
-        const speaker = await Speaker.findById(request.params.id);
-        speaker.code = request.request.body.code;
-        speaker.name = request.request.body.name;
-        speaker.qualification = request.request.body.qualification;
-        speaker.description = request.request.body.description;
+        const speaker = await Speaker.findById(ctx.params.id);
+        speaker.code = ctx.request.body.code;
+        speaker.name = ctx.request.body.name;
+        speaker.type = ctx.request.body.type;
+        speaker.qualification = ctx.request.body.qualification;
+        speaker.description = ctx.request.body.description;
 
         const getSpeaker = await speaker.save();
         console.log(getSpeaker);
-        request.body = getSpeaker;
+        ctx.body = getSpeaker;
 
     } catch (error) {
-        request.body = error;
+        ctx.body = error;
     }
 
 });

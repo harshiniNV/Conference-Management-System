@@ -11,6 +11,10 @@ const speakerSchema = new mongoose.Schema({
         type: String,
         required: true
     },
+    type: {
+        type: String,
+        required: true
+    },
     qualification: {
         type: String,
         required: true
