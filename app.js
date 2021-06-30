@@ -14,7 +14,9 @@ const userRoutes = require('./controller/UserController');
 const app = new Koa();
 
 //Database config
-const URL = 'mongodb://localhost/cms';
+//const URL = 'mongodb://localhost/cms';
+const URL = "mongodb+srv://pjs:pjs@af-cmt.c060p.mongodb.net/cms?retryWrites=true&w=majority";
+
 
 //establish the connection
 mongoose.connect(URL, {useNewUrlParser: true});
